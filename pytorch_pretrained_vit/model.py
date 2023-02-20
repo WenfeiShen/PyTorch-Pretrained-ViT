@@ -54,6 +54,7 @@ class ViT(nn.Module):
         in_channels: int = 3, 
         image_size: Optional[int] = None,
         num_classes: Optional[int] = None,
+        weights_path=None
     ):
         super().__init__()
 
@@ -134,6 +135,7 @@ class ViT(nn.Module):
                 load_fc=(num_classes == pretrained_num_classes),
                 load_repr_layer=load_repr_layer,
                 resize_positional_embedding=(image_size != pretrained_image_size),
+                weights_path=weights_path
             )
         
     @torch.no_grad()
