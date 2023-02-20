@@ -54,7 +54,7 @@ class ViT(nn.Module):
         in_channels: int = 3, 
         image_size: Optional[int] = None,
         num_classes: Optional[int] = None,
-        weights_path=None
+        weights_path: str=None
     ):
         super().__init__()
 
